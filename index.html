@@ -1,25 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Prakrati Mamtani</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakrati Mamtani</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<nav>
-		<ul class="nav-bar">
-			<li class="push"> Prakrati Mamtani </li>
-			<li><a href="index.html">Welcome</a></li>
-			<li><a href="resume.html">Resume</a></li>
-		</ul>
-	</nav>
-	<h1 id="greet"></h1>
-	<div class="box">
-		<input id ="name" type="text" size="15" placeholder="Enter your name">
-		<button onclick="printmessage()">Enter</button>
-		<p id="message"></p>
-	</div>
-<script src="script.js"></script>
+    <div class="container">
+        <img src="imgs/background.png" alt="Background Image">
+        <nav>
+            <ul class="nav-bar">
+                <li class="name"> Prakrati Mamtani </li>
+                <li><a href="index.html">Welcome</a></li>
+                <li><a href="Resume.pdf" target="_blank">Resume</a></li>
+            </ul>
+        </nav>
+        <h1 id="greet"></h1>
+        <button class="button" id="CoursesBtn"><img src="imgs/courses.png" alt="Button Image" type="image/png"></button>
+        <button class="button" id="SkillsBtn"><img src="imgs/skills.png" alt="Button Image" type="image/png"></button>
+        <button class="button" id="ContactBtn"><img src="imgs/contact.png" alt="Button Image" type="image/png"></button>
+        <button class="button" id="WorkBtn"><img src="imgs/work.png" alt="Button Image"></button>
+        <button class="button" id="LeadBtn"><img src="imgs/leadership.png" alt="Button Image"></button>
+        
+        <div id="CoursesModal" class="modal">
+            <h3>Courses</h3>
+            <ul>
+                <li>Intro to Computer Science</li>
+                <li>Discrete Mathematics</li>
+                <li>Data Structures</li>
+                <li>Calculus with Applications to Science and Engineering</li>
+                <li>Multivariable Calculus with Applications to Science and Engineering</li>
+                <li>Linear ALgebra</li>
+                <li>Probability and Statistics</li>
+            </ul>
+            <button id="CloseCourses">Close</button>
+        </div>
+    
+        <div id="SkillsModal" class="modal skills">
+            <h3>Skills</h3>
+            <ul>
+                <li>Python</li>
+                <li>C/C++</li>
+                <li>PHP</li>
+                <li>JavaScript</li>
+                <li>PostGres</li>
+                <li>SPARQL</li>
+                <li>MY SQL</li>
+                <li>Data Visualisation using Cesium</li>
+                <li>Google APIs</li>
+                <li>Adobe Creative Suite</li>
+                <li>Figma</li>
+                <li>I-movie</li>
+            </ul>
+            <button id="CloseSkills">Close</button>
+        </div>
+    
+        <div id="ContactModal" class="modal contact">
+            <h3>Contact</h3>
+            <ul>
+                <li>Phone no.: (+971) 564086895</li>
+                <li>Email: pm3484@nyu.edu</li>
+                <li><a href="https://www.linkedin.com/in/prakrati-mamtani-a8295b1b6" target="_blank">Linked-in</a></li>
+            </ul>
+            <button id="CloseContact">Close</button>
+        </div>
+    
+        <div id="flashcardsWorkModal" class="flashcards">
+            <div class="work">
+                <h2>Research Assistant @NYUAD CITIES Research Center</h2>
+                <p>May 2023 - July 2023</p>
+                <ul>
+                    <li>Gained experience with data parsing, Graph databases, and programming languages such as Python, Javascript, and SPARQL.</li>
+                    <li>Developed scripts for parsing CSV files and transforming data into graph formats and triples.</li>
+                    <li>Implemented visualization interfaces with the necessary backend and front-end code.</li>
+                    <li>Optimized scripts for performance and scalability.</li>
+                    <li>Collaborated with other lab members to integrate scripts into existing systems.</li>
+                    <li>Tested and debugged scripts.</li>
+                </ul>
+                
+            </div>
+            <div class="work">
+                <h2>Website Developer @Unique Builders</h2>
+                <p>April 2021 - Dec 2021</p>
+                <ul>
+                    <li>Implemented responsive web design using Bootstrap grid system.</li>
+                    <li>Upgraded the functionalities by adding more GUI elements to enhance user experience.</li>
+                    <li>Designed the aesthetics of website using CSS and Javascript in order to serve the purpose of commercial website.</li>
+                </ul>
+            </div>
+            <div class="work">
+                <h2>Database manager @Intern-net</h2>
+                <p>April 2021 - Dec 2021</p>
+                <ul>
+                    <li>Recorded the job preferences and characteristics of students and applied encryption algorithm to protect the confidential data. </li>
+                    <li>Incorporated relational database management system to maintain a record of ongoing internships of students.</li>
+                    <li>Monitored and paired students with their potential employer by inspecting the records entered in the Database Management system.</li>
+                </ul>
+            </div>
+            <div class="work">
+                <h2>Multimedia Editor @Gazelle</h2>
+                <p>Jan 2023 - May 2023</p>
+                <ul>
+                    <li>Create illustrations and graphics to accompany articles and developing poster designs for the special issues.</li>
+                    <li>Assist the Senior Multimedia Editor in supervising the staff illustrators in order to divide each week’s artwork assignments among them. </li>
+                </ul>
+            </div>
+            <div class="work">
+                <h2>Social Media Manager @Spiritual Life, InterCultural Education and Conflict Transformation</h2>
+                <p>Jan 2023 - Present</p>
+                <ul>
+                    <li>Create and design promotional materials such as posters, editing videos using Canva, i-movie, and Inshot for digital marketing.Attend and assist in preparation of all SLICECT events as well as document the event by taking pictures and videos.</li>
+                    <li>Assist in general administrative support and handle the logistics of the department.</li>
+                    <li>Design Merch and create mock-ups for them using Figma.</li>
+                </ul>
+            </div>
+            <div class="work">
+                <h2>Research Fellow Transcriber @Hilary Ballon Center for Teaching and Learning.</h2>
+                <p>Feb 2023 - May 2023</p>
+                <ul>
+                    <li>Assisted in data collection and analysis</li>
+                    <li>Listened to audio or video recordings and transcribed them using the software otter.ai them accurately and efficiently that requires high level of concentration, attention to detail, and the ability to type quickly.</li>
+                </ul>
+            </div>
+            <button id="nextWorkFlashcard">Next</button>
+            <button id="closeWorkFlashcards">Close</button>
+        </div>
+        
+
+
+
+        <div id="flashcardsLeadModal" class="flashcards">
+            <div class="leadership">
+                <h2>Co-Founder of the Student Club 'Code & Her'</h2>
+                <p>April 2021 - Dec 2021</p>
+                <ul>
+                    <li>Initiated an all girls coding club in school wherein mentored 100+ members through 45 virtual sessions of python to introduce them to basic coding skills, encouraged 10% girls to pursue Computer Science.</li>
+                    <li>Organised India's 1st all girls and non-binary hackathon on Devpost and attained 10 sponsors/partners, 75+ participants from 15+ countries with 4 judges for professional consultation.</li>
+                </ul>
+            </div>
+            <div class="leadership">
+                <h2>Co-Founder of the Student Club'Web Wizards'</h2>
+                <p>May 2021 - July 2021</p>
+                <ul>
+                    <li>Tutored full stack web development through interactive virtual sessions to 50+ kids of 13-15year old and familiarised concepts of HTML, CSS, Js to 50% of the members.</li>
+                    <li>Assessed students in real-life applications of website through inspection of other successful projects and enhanced their creative and problem-solving skills.</li>
+                </ul>
+            </div>
+            <div class="leadership">
+                <h2>Co-host of STEM Talks</h2>
+                <p>May 2021 - Nov 2021</p>
+                <ul>
+                    <li>Scripted, hosted, edited STEM podcast weekly using Anchor to share intriguing facts and concepts about STEM.</li>
+                    <li>Streamed on Spotify, Apple podcasts, and Google podcasts, Pocket casts, Breaker, Radio public with over 300 engaged audience.</li>
+                    <li>Conducted International podcast competition for high school students with 50 enrolments.</li>
+                </ul>
+            </div>
+            <div class="leadership">
+                <h2>Dance Instructor @ATTITUDE NYUAD</h2>
+                <p>Jan 2023 - May 2023</p>
+                <ul>
+                    <li>Conduct weekly Hip-Hop dance sessions for university students.</li>
+                    <li>Choreograph routines for the teaching session and recital conducted every semester.</li>
+                </ul>
+            </div>
+            <button id="nextLeadFlashcard">Next</button>
+            <button id="closeLeadFlashcards">Close</button>
+        </div>
+
+    </div>
+
+    
+
+    <script src="script.js"></script>
 </body>
 </html>
