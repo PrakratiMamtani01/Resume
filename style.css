@@ -1,66 +1,177 @@
-body{
-	background-color: #FEE0F1;
+.container {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    display: inline-block;
+    height: auto; /* Adjust as needed */
 }
 
-.nav-bar{
-	display: flex;
-	list-style: none;
-	font-size: 0.7 em;
-	justify-content: right;
+.container img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
-.push{
-	margin-right: auto;
-	font-size: 25px;
+nav{
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
 }
 
-li{
-	padding: 20px;
+.nav-bar {
+    width: 20%;
+    height: 10%;
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    list-style: none;
+    font-size: 1.5vw;
+    padding: 0;
 }
 
-a{
-	color:black;
-	text-decoration: none;
-	text-align: right;
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.name {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    right: 350%;
+    font-size: 1.75em;
 }
 
 h1{
-	text-align: center;
-	font-size: 10vw;
-	background-color: #DDC5EB;
-	position: relative;
-	top: -30px;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    text-align: center;
+    font-size: 5vw;
+    text-align: center;
 }
 
-div.box{
-	text-align: center;
+/* .positioned-button  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
+
+
+.button {
+    width: 10%;
+    position: absolute;
+    top: 20%;
+    left: 60%;
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
 }
 
-input{
-	position: relative;
-	bottom: 30px;
-	height: 30px;
-	width: 180px;
-	font-size: 12pt;
-	border: 2px solid blueviolet;
-	border-radius: 8px;
-	padding-left: 60px;
+#SkillsBtn {
+    width: 7%;
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    background: transparent;
 }
-button{
-	font-size: 15px;
-	position: relative;
-	bottom: 30px;
-	border-radius: 8px;
+
+#ContactBtn {
+    width: 7%;
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    background: transparent;
+}
+
+#CoursesBtn {
+    width: 20%;
+    position: absolute;
+    top: 60%;
+    left: 80%;
+    background: transparent;
+    border: none;
+}
+
+#WorkBtn {
+    width: 40%;
+    position: absolute;
+    top: 35%;
+    left: 30%;
+    background: transparent;
+}
+
+#LeadBtn {
+    width: 15%;
+    position: absolute;
+    top: 60%;
+    left: 65%;
+    background: transparent;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: #DDC5EB;
+    border-radius: 20px;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 50%;
+    left: 80%;
+    max-height: 55%;
+    max-width: 30%;
+    font-size: 1vw;
+    overflow: auto;
+}
+
+.modal button{
+    border-radius: 8px;
 	border: 2px solid blueviolet;
-	padding: 9px;
 	background-color: white;
-}
-button:hover {
-  background-color: blueviolet;
-  color: white;
+    font-size: 1vw;
+    
 }
 
-button#page_id{
-	position: relative;
-	top: 5px;
+.modal button:hover {
+    background-color: blueviolet;
+    color: white;
+  }
+
+
+.flashcards {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #DDC5EB;
+    border-radius: 20px;
+    border: black solid;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    max-height: 70%;
+    font-size: 1.5vw;
+    overflow: auto;
 }
+
+.flashcards button{
+    border-radius: 8px;
+	border: 2px solid blueviolet;
+	background-color: white;
+    font-size: 1.5vw;
+}
+
+.flashcards button:hover {
+    background-color: blueviolet;
+    color: white;
+  }
+
