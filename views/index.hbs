@@ -1,0 +1,151 @@
+<div class="profile">
+    <img src="/imgs/me.jpg">
+
+    <div>
+        <h1>
+            Prakrati Mamtani
+        </h1>
+        <p>
+            I'm Prakrati Mamtani, an aspiring Product Manager and UI/UX designer with a proven track record of
+            identiying
+            problems, deriving, designing and delivering high-value software solutions.
+        </p>
+        <p>
+            I'm an undergraduate student in my penultimate year at New York University Abu Dhabi.
+        </p>
+        <p>
+            I have been working on internships and projects in this field since 4 years now, below is a more detailed
+            description of my work. Please have a look at it and don't forget to have fun with it.
+        </p>
+    </div>
+</div>
+
+<div class="skills">
+    <h1>Skills</h1>
+
+    <p>Welcome to my skill memory game. It is as simply as suggested by the name. Match the tiles to reveal my skills
+        but if you get tired there is always an end game to reveal all skills anyways. Have fun!!!</p>
+
+    <div class="game">
+        <div class="memory-game"></div>
+        <div class="collected">
+            <p><b>Skills Collected</b></p>
+            <ul class="all"></ul>
+        </div>
+    </div>
+    <button id="end-game">End Game</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- Script --}}
+
+<script>
+    const skills = ['HTML', 'CSS', 'JS', 'Express', 'MongoDB', 'Python', 'NLP', 'Flutter'];
+    const skillsSet = [...skills, ...skills]; // Duplicate the skills array for pairs
+    const shuffledSkills = skillsSet.sort(() => Math.random() - 0.5); // Shuffle skills
+
+    const gameContainer = document.querySelector('.memory-game');
+    const list = document.querySelector('.all');
+
+    // Create card elements
+    shuffledSkills.forEach(skill => {
+        const card = document.createElement('div');
+        card.classList.add('card', 'hidden');
+        card.dataset.skill = skill;
+        gameContainer.appendChild(card);
+    });
+
+    let firstCard = null;
+    let secondCard = null;
+    let preventClick = false;
+
+    // Handle card click
+    function handleCardClick(e) {
+        if (preventClick) return;
+
+        const clickedCard = e.target;
+
+        // Ignore clicks on already matched or flipped cards
+        if (clickedCard.classList.contains('matched') || clickedCard === firstCard) return;
+
+        clickedCard.classList.remove('hidden');
+
+        if (!firstCard) {
+            firstCard = clickedCard;
+            firstCard.textContent = clickedCard.dataset.skill;
+            return;
+        }
+
+        secondCard = clickedCard;
+        secondCard.textContent = clickedCard.dataset.skill;
+
+        // Check for a match
+        if (firstCard.dataset.skill === secondCard.dataset.skill) {
+            firstCard.classList.add('matched');
+            secondCard.classList.add('matched');
+            const item = document.createElement('li');
+            item.textContent = firstCard.dataset.skill
+            list.appendChild(item);
+            resetCards();
+        } else {
+            preventClick = true;
+            setTimeout(() => {
+                firstCard.classList.add('hidden');
+                firstCard.textContent = '';
+                secondCard.classList.add('hidden');
+                secondCard.textContent = '';
+                resetCards();
+            }, 1000);
+        }
+    }
+
+    // Reset selected cards
+    function resetCards() {
+        firstCard = null;
+        secondCard = null;
+        preventClick = false;
+    }
+
+    // Add click event listeners to all cards
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', handleCardClick);
+    });
+
+    // End game button functionality
+    const addedSkills = new Set();
+    const gameEndButton = document.querySelector('#end-game');
+    gameEndButton.addEventListener('click', () => {
+        document.querySelectorAll('.card').forEach(card => {
+            if (!card.classList.contains('matched')) {
+                const skill = card.dataset.skill;
+
+                // Add skill to the list only if it hasn't been added before
+                if (!addedSkills.has(skill)) {
+                    const item = document.createElement('li');
+                    item.textContent = skill;
+                    list.appendChild(item);
+                    addedSkills.add(skill); // Track the skill
+                }
+
+                // Mark the card as matched and reveal it
+                card.classList.remove('hidden');
+                card.classList.add('matched');
+                card.textContent = skill;
+            }
+        });
+    });
+
+</script>

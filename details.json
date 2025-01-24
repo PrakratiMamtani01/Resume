@@ -1,0 +1,83 @@
+[
+    {
+        "field": "Computer Science",
+        "title": "Summer Research Assisstant at Cyber Security lab",
+        "description": "Extensively studied facial recognition systems and built an adversarial mask that misclassifies an individual.",
+        "thumbnail": "/imgs/NYUAD.png",
+        "imgs": [],
+        "link": ""
+    },
+    {
+        "field": "Computer Science",
+        "title": "AI Chatbot",
+        "description": "Developed an NLP-based AI chatbot to automate FAQ responses, implementing techniques such as tokenization, stemming, and lemmatization.",
+        "thumbnail": "/imgs/cs/chatbot.png",
+        "imgs": [],
+        "link": "https://github.com/PrakratiMamtani01/Chatbot"
+    },
+    {
+        "field": "Computer Science",
+        "title": "E-Commerce Flower Shop",
+        "description": "Built a Flutter-based e-commerce app for flower orders, integrating both JSON and API data sources for product loading.",
+        "thumbnail": "",
+        "imgs": [],
+        "link": "https://github.com/PrakratiMamtani01/FlutterDeveolopment"
+    },
+    {
+        "field": "Computer Science",
+        "title": "Kanban Board",
+        "description": "Created a React-based Kanban board application for university students, improving time and resource management for users.",
+        "thumbnail": "/imgs/cs/KanbanBoard.png",
+        "imgs": [],
+        "link": "https://github.com/PrakratiMamtani01/KanbanBoard"
+    },
+    {
+        "field": "Computer Science",
+        "title": "Market Growth Analysis",
+        "description": "a Health Insurance company wants to explore a potential insurance market, Vehicle Insurance. Through the data collected by the company I aim to identify factors that contribute to the purchase of Vehicle insurance. This would provide a foundation relation between Health and Vehicle Insurance. Further I would analyse the factors and evaluate whether Vehicle Insurance will be a profitable market for the company.",
+        "thumbnail": "/imgs/cs/marketGrowth.png",
+        "imgs": [],
+        "link": "https://huggingface.co/spaces/prakrati-m/HealthInsurance"
+    },
+    {
+        "field": "Computer Science",
+        "title": "Fraudulent Detector",
+        "description": "Our client is Eden Data, one of the reknowned Cyber Security company in the USA that focuses on make internet a safe space to make online transactions. Recently, they observed that there has been a peak in the number of fraudulent activity on internet and to ensure the safety of their customers they want us to help analyse the features of potential fraudulent activity",
+        "thumbnail": "/imgs/cs/fraud.png",
+        "imgs": [],
+        "link": "https://huggingface.co/spaces/NYU-DS-4-Everyone/fraud_detection"
+    },
+    {
+        "field": "Computer Science",
+        "title": "Summer Research Assisstant at CITIES lab",
+        "description": "Optimized data processing by cleaning and parsing dataset using Python libraries including Pandas and NumPy.",
+        "thumbnail": "/imgs/cs/cities.png",
+        "imgs": [],
+        "link": ""
+    },
+    {
+        "field": "Marketing",
+        "title": "TASHAN",
+        "description": "Optimized data processing by cleaning and parsing dataset using Python libraries including Pandas and NumPy.",
+        "thumbnail": "/imgs/marketing/tashan/tashan.jpeg",
+        "imgs": [
+            "/imgs/marketing/tashan/diwali.jpg",
+            "/imgs/marketing/tashan/holi.png",
+            "/imgs/marketing/tashan/applications.jpg",
+            "/imgs/marketing/tashan/worldcup.jpg"
+        ],
+        "link": "https://www.instagram.com/tashannyuad?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+    },
+    {
+        "field": "Marketing",
+        "title": "Marhaba NYUAD",
+        "description": "Optimized data processing by cleaning and parsing dataset using Python libraries including Pandas and NumPy.",
+        "thumbnail": "/imgs/NYUAD.png",
+        "imgs": [
+            "/imgs/marketing/marhaba/city.jpg",
+            "/imgs/marketing/marhaba/ra.png",
+            "/imgs/marketing/marhaba/restaurant.jpg"
+        ],
+        "link": "https://www.instagram.com/marhabanyuad/?utm_source=ig_web_button_share_sheet"
+    }
+]

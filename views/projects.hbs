@@ -1,0 +1,99 @@
+<h1 id="field">{{field}}</h1>
+{{#if projects}}
+{{#each projects}}
+<div class="list">
+    <div class="block">
+        <nav class="project-title">
+            {{#if link}}
+            <a href={{link}} target="_blank">
+                {{/if}}
+                <h2>{{title}}</h2>
+                {{#if link}}
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                {{/if}}
+            </a>
+        </nav>
+        <img class="project-thumbnail" src="{{thumbnail}}" data-index="{{@index}}">
+    </div>
+    <p>{{description}}</p>
+</div>
+{{/each}}
+{{else}}
+<h2>Coming Soon...</h2>
+{{/if}}
+
+
+
+<!-- Bootstrap Modal with Carousel -->
+<div class="modal fade" id="imageCarouselModal" tabindex="-1" aria-labelledby="carouselLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="carouselLabel">Project Images</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                        <!-- Carousel items will be dynamically populated -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{{!-- Javascript --}}
+<script>
+    let projects = {{{ json projects }}};
+    document.addEventListener("DOMContentLoaded", function () {
+        const thumbnails = document.querySelectorAll(".project-thumbnail");
+        const thumbnailsTemp = Array.from(document.querySelectorAll(".project-thumbnail"));
+        const carouselInner = document.querySelector(".carousel-inner");
+
+
+        const filteredProjects = projects.filter((p) => {
+            return thumbnailsTemp.some((thumbnail) => thumbnail.src.includes(p['thumbnail']));
+        });
+
+        thumbnails.forEach((thumbnail, index) => {
+            if (filteredProjects[index]["imgs"].length !== 0) {
+                thumbnail.setAttribute("data-bs-toggle", "modal");
+                thumbnail.setAttribute("data-bs-target", "#imageCarouselModal");
+                thumbnail.classList.add("gallery");
+                thumbnail.addEventListener("click", function () {
+
+                    // Clear existing carousel items
+                    carouselInner.innerHTML = "";
+
+                    // Populate the carousel with project images
+                    filteredProjects[index]["imgs"].forEach((image, i) => {
+                        const item = document.createElement("div");
+                        item.className = `carousel-item ${i === index ? "active" : ""}`;
+                        item.style.objectFit = "contain";
+                        item.innerHTML = `<img src="${image}" class="d-block w-100" alt="Project Image">`;
+                        carouselInner.appendChild(item);
+                    });
+
+                });
+            }
+        });
+    });
+</script>
