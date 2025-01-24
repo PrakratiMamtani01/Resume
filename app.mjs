@@ -52,6 +52,6 @@ app.get('/projects', (req, res) => {
 })
 
 // const PORT = process.env.PORT || 3000;
-app.listen(0, () => {
-    console.log(`Server running on port ${server.address().port}`);
+app.listen(3000, () => {
+    console.log("Server running on port");
 });
